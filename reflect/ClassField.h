@@ -10,7 +10,7 @@ class ClassField
 {
 public:
     ClassField() : m_name(""), m_type(""), m_offset(0) {}
-    ClassField(const string & name, const string & type, uintptr_t offset) : m_name(name), m_type(type), m_offset(offset) {}
+    ClassField(const string & name, const string & type, size_t offset) : m_name(name), m_type(type), m_offset(offset) {}
     ~ClassField() {}
 
     const string & name()
@@ -23,7 +23,7 @@ public:
         return m_type;
     }
 
-    uintptr_t offset()
+    size_t offset()
     {
         return m_offset;
     }
@@ -31,7 +31,7 @@ public:
 private:
     string m_name;
     string m_type;
-    uintptr_t m_offset;
+    size_t m_offset;
 };
 
 }
