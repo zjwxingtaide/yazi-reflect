@@ -37,7 +37,7 @@ ClassField * Object::get_field(const string & fieldName)
 void Object::set(const string & fieldName, const char * value)
 {
     ClassField * field = Singleton<ClassFactory>::instance()->get_class_field(m_className, fieldName);
-    uintptr_t offset = field->offset();
+    size_t offset = field->offset();
     *((string *)((unsigned char *)(this) + offset)) = string(value);
 }
 

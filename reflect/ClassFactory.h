@@ -79,7 +79,7 @@ template <typename T>
 void Object::get(const string & fieldName, T & value)
 {
     ClassField * field = Singleton<ClassFactory>::instance()->get_class_field(m_className, fieldName);
-    uintptr_t offset = field->offset();
+    size_t offset = field->offset();
     value = *((T *)((unsigned char *)(this) + offset));
 }
 
@@ -87,7 +87,7 @@ template <typename T>
 void Object::set(const string & fieldName, const T & value)
 {
     ClassField * field = Singleton<ClassFactory>::instance()->get_class_field(m_className, fieldName);
-    uintptr_t offset = field->offset();
+    size_t offset = field->offset();
     *((T *)((unsigned char *)(this) + offset)) = value;
 }
 
