@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stddef.h>
+
 #include "ClassFactory.h"
 
 namespace yazi {
@@ -37,11 +39,14 @@ public:
     }                                                                  	\
     ClassRegister classRegister##className(#className, createObject##className)
 
-#define OFFSET(className, fieldName) \
-    ((size_t)(&((className *)0)->fieldName))
+// #define OFFSET(className, fieldName) \
+//     ((size_t)(&((className *)0)->fieldName))
+
+// #define REGISTER_CLASS_FIELD(className, fieldName, fieldType) \
+//     ClassRegister classRegister##className##fieldName(#className, #fieldName, #fieldType, OFFSET(className, fieldName))
 
 #define REGISTER_CLASS_FIELD(className, fieldName, fieldType) \
-    ClassRegister classRegister##className##fieldName(#className, #fieldName, #fieldType, OFFSET(className, fieldName))
+    ClassRegister classRegister##className##fieldName(#className, #fieldName, #fieldType, offsetof(className, fieldName))
 
 #define REGISTER_CLASS_METHOD(className, methodName) \
     std::function<void(className *)> className##methodName##method = &className::methodName; \
