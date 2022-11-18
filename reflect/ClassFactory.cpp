@@ -64,7 +64,7 @@ Object * ClassFactory::create_class(const string & className)
     return it->second();
 }
 
-void ClassFactory::register_class_field(const string & className, const string & fieldName, const string & fieldType, uintptr_t offset)
+void ClassFactory::register_class_field(const string & className, const string & fieldName, const string & fieldType, size_t offset)
 {
     m_classFields[className].push_back(new ClassField(fieldName, fieldType, offset));
 }

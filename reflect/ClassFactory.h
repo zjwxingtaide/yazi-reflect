@@ -54,7 +54,7 @@ public:
     Object * create_class(const string & className);
 
     // reflect class field
-    void register_class_field(const string & className, const string & fieldName, const string & fieldType, uintptr_t offset);
+    void register_class_field(const string & className, const string & fieldName, const string & fieldType, size_t offset);
     int get_class_field_count(const string & className);
     ClassField * get_class_field(const string & className, int pos);
     ClassField * get_class_field(const string & className, const string & fieldName);
