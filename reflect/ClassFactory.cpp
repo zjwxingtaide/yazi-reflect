@@ -1,8 +1,6 @@
 #include "ClassFactory.h"
 using namespace yazi::reflect;
 
-#include <stdexcept>
-
 Object::Object() : m_className("")
 {
 }

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include <functional>
 using namespace std;
 
 namespace yazi {
