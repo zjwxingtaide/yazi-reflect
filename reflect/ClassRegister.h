@@ -37,9 +37,6 @@ public:
     }                                                                  	\
     ClassRegister classRegister##className(#className, createObject##className)
 
-// #define OFFSET(className, fieldName) \
-//     ((size_t)(&((className *)0)->fieldName))
-
 #define REGISTER_CLASS_FIELD(className, fieldName, fieldType) \
     className className##fieldName; \
     ClassRegister classRegister##className##fieldName(#className, #fieldName, #fieldType, (size_t)(&(className##fieldName.fieldName)) - (size_t)(&className##fieldName))
