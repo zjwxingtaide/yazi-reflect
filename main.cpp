@@ -21,6 +21,7 @@ int main()
 
     a->call("f1");
     a->call("f2");
+    a->show();
 
     return 0;
 }
